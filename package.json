@@ -1,11 +1,19 @@
 {
-  "name": "calculator",
-  "version": "1.0.0",
-  "description": "calculator",
-  "main": "app.js",
+  "name": "calculator-project",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "author": "Olena And Arturo",
-  "license": "ISC"
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.77.5",
+    "vite": "^5.2.8"
+  }
 }
