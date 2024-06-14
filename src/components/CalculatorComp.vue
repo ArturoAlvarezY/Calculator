@@ -96,5 +96,15 @@
 
 <script setup>
 
-/// The backgroundColor of each button is: rgb(55, 60, 103);
+const numbers = document.querySelectorAll('.number');
+const calculatorScreen= document.getElementById('userInput');
+
+    numbers.forEach(number => {
+      number.addEventListener(onclick, ()=>{
+        calculatorScreen.innerHTML= `number.textContent`;
+        console.log('click');
+      })
+    });
+
+     log
 </script>
