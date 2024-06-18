@@ -11,6 +11,17 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import cloudyIcon from '@/assets/nuboso.png';
+import clearIcon from '@/assets/despejado.png'
+import wetIcon from '@/assets/humedo.png'
+import rainIcon from '@/assets/Lluvia.png'
+import stormIcon from '@/assets/tormenta.png'
+import hightCloudIcon from '@/assets/nubes-altas.png'
+import defaultIcon from '@/assets/default.png'
+
+
+
+
+
 
 const city = ref('');
 const temperature = ref('');
@@ -32,7 +43,28 @@ const fetchWeather = async () => {
         if (sky.includes('nuboso') || sky.includes('cubierto')) {
             icon.value = cloudyIcon;
         }
-    
+
+        else if (sky.includes('despejado')){
+            icon.value= clearIcon;
+        }
+
+        else if(sky.includes('humedo')){
+            icon.value= wetIcon;
+        }
+        else if(sky.includes('lluvia')){
+            icon.value= rainIcon;
+        } 
+
+        else if(sky.includes('tormenta')){
+            icon.value= stormIcon;
+        }
+        else if(sky.includes('nubes altas')){
+            icon.value= hightCloudIcon;
+        }else{
+            icon.value= defaultIcon;
+        }
+        
+        
     }
     catch(error) {
         console.error('Error loading data', error); 
