@@ -1,6 +1,6 @@
 <script setup>
 import Calculator from './components/CalculatorComp.vue';
-
+import TheWeather from './components/TheWeather.vue';
 // import HelloWorld from './components/HelloWorld.vue'
 // import TheWelcome from './components/TheWelcome.vue'
 </script>
@@ -16,6 +16,7 @@ import Calculator from './components/CalculatorComp.vue';
 
   <main>
     <!-- <TheWelcome /> -->
+     <TheWeather />
      <Calculator />
   </main>
 </template>
