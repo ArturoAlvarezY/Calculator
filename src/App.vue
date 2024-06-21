@@ -18,7 +18,10 @@ import CurrencyConverter from './components/CurrencyConverter.vue';
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
+main {
+  padding-block: 30px;
+  margin-inline: auto;
+}
 h1, h2, h3 {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -39,5 +42,8 @@ input, select {
   font-style: normal;
 }
 
-
+.heading {
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
 </style>

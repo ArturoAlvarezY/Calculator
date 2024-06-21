@@ -59,20 +59,29 @@ onMounted(fetchWeather);
 
 <template>
     <div class="weather">
-        weather
         <h2>{{ city }}</h2>
-        <p>{{ temperature }}°C</p>
         <img :src="icon" alt="weather icon" />
-        <p>{{ stateSky }}</p>
+        <div>
+            <h3>{{ temperature }}°C</h3>
+            <p>{{ stateSky }}</p>            
+        </div>
     </div>
 </template>
 
 
 <style lang="scss" scoped>
+
 .weather {
     background-color: #2C3051;
     padding: 20px;
     max-width: 310px;
     border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+        div {
+            text-align: right;
+        }
 }
 </style>
