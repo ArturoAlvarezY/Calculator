@@ -68,7 +68,8 @@ const convertCurrency = async () => {
     </div>
     <button :disabled="isConverting" @click="convertCurrency">Convert</button>
     <div v-if="result">
-      <p>{{ result.amount }} {{ result.fromCurrency }} = {{ result.convertedAmount }} {{ result.toCurrency }}</p>
+      <p class="from">{{ result.amount }} {{ result.fromCurrency }} = </p>
+      <p class="to">{{ result.convertedAmount }} {{ result.toCurrency }}</p>
     </div>
   </div>
 </template>
@@ -78,10 +79,12 @@ const convertCurrency = async () => {
 <style lang="scss" scoped>
 .currency-converter {
 max-width: 310px;
-margin: 0 auto;
+background-color: rgb(44, 48, 81);
+padding: 15px;
+border-radius: 20px;
 display: flex;
 flex-direction: column;
-gap: 10px;
+gap: 20px;
 
   input, select {
     width: 100%;
@@ -89,11 +92,45 @@ gap: 10px;
     padding: 15px;
     border-radius: 16px;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     color: #E8E8EC;
+      &:hover {
+        cursor: pointer;
+      }
   }
 }
 
+label, .from {
+  color: #969BC1;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.to {
+  color: #E8E8EC;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+button {
+  background-color: #1B54E9;
+  border-radius: 16px;
+  padding-block: 15px;
+  padding-inline: 21px;
+  text-align: center;
+  color: #E8E8EC;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  margin-top: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
 </style>
   
