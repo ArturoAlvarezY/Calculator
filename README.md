@@ -1,14 +1,18 @@
-# calculator-project
+# Calculator-project
 
-This template should help get you started developing with Vue 3 in Vite.
+Calculator with Currency Converter and The Weather.
 
-## Recommended IDE Setup
+## Requirements 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+![preview Requirements](/src/assets/readme/Requirements.jpg)
 
-## Customize configuration
+## Figma
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+![preview Figma](/src/assets/readme/figma.png)
+
+## APP Prewiev
+
+![preview live](/src/assets/readme/live-prewiev.png)
 
 ## Project Setup
 
@@ -27,3 +31,14 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Contributors
+
+- [@ArturoAlvarezY](https://github.com/ArturoAlvarezY)
+- [@OlenaAndrushchenko](https://github.com/OlenaAndrushchenko)
+
+## Stack
+- VUE
+- HTML
+- SCSS
+- JS
