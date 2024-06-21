@@ -1,8 +1,8 @@
 <template>
     <div class="weather">
-        weather here
+        weather
         <h2>{{ city }}</h2>
-        <p>{{ temperature }}</p>
+        <p>{{ temperature }}°C</p>
         <img :src="icon" alt="weather icon" />
         <p>{{ stateSky }}</p>
     </div>
