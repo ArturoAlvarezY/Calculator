@@ -1,13 +1,3 @@
-<template>
-    <div class="weather">
-        weather
-        <h2>{{ city }}</h2>
-        <p>{{ temperature }}°C</p>
-        <img :src="icon" alt="weather icon" />
-        <p>{{ stateSky }}</p>
-    </div>
-</template>
-
 <script setup>
 import { ref, onMounted } from 'vue';
 import cloudyIcon from '@/assets/nuboso.png';
@@ -69,6 +59,17 @@ const fetchWeather = async () => {
 onMounted(fetchWeather);
 
 </script>
+
+<template>
+    <div class="weather">
+        weather
+        <h2>{{ city }}</h2>
+        <p>{{ temperature }}°C</p>
+        <img :src="icon" alt="weather icon" />
+        <p>{{ stateSky }}</p>
+    </div>
+</template>
+
 
 <style lang="scss" scoped>
 .weather {

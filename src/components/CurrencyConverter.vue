@@ -1,3 +1,45 @@
+<script setup>
+import { ref } from 'vue';
+import Freecurrencyapi from '@everapi/freecurrencyapi-js';
+
+const inputAmount = ref(0);
+const inputFromCurrency = ref('USD');
+const inputToCurrency = ref('EUR');
+const result = ref(null);
+const isConverting = ref(false);
+
+const freecurrencyapi = new Freecurrencyapi('fca_live_mttqkBS6GLC1kWULIW86L76swGrAWlWmURwD2WQU');
+
+const currencies = ref([
+  { code: 'EUR', name: 'Euro (€)' },
+  { code: 'USD', name: 'Dollar ($)' },
+  { code: 'JPY', name: 'Yen (¥)' },
+  { code: 'HNL', name: 'Honduran Lempira (Honduras)' },
+]);
+
+const convertCurrency = async () => {
+  isConverting.value = true;
+  try {
+    const response = await freecurrencyapi.latest({
+      base_currency: inputFromCurrency.value,
+      currencies: inputToCurrency.value
+    });
+
+    const rate = response.data[inputToCurrency.value];
+    result.value = {
+      amount: inputAmount.value,
+      fromCurrency: inputFromCurrency.value,
+      toCurrency: inputToCurrency.value,
+      convertedAmount: (inputAmount.value * rate).toFixed(4)
+    };
+  } catch (error) {
+    console.error('Error fetching the conversion rate:', error);
+  } finally {
+    isConverting.value = false;
+  }
+};
+</script>
+
 <template>
   <div class="heading">
     <h2>Currency Converter</h2>
@@ -31,61 +73,7 @@
   </div>
 </template>
   
-<script>
-import { ref } from 'vue';
-import Freecurrencyapi from '@everapi/freecurrencyapi-js';
 
-export default {
-name: 'CurrencyConverter',
-setup() {
-    const inputAmount = ref(0);
-    const inputFromCurrency = ref('USD');
-    const inputToCurrency = ref('EUR');
-    const result = ref(null);
-    const isConverting = ref(false)
-    const freecurrencyapi = new Freecurrencyapi('fca_live_mttqkBS6GLC1kWULIW86L76swGrAWlWmURwD2WQU')
-
-    const currencies = ref([
-    { code: 'EUR', name: 'Euro (€)' },
-    { code: 'USD', name: 'Dollar ($)' },
-    { code: 'JPY', name: 'Yen (¥)' },
-    { code: 'HNL', name: 'Honduran Lempira (Honduras)' },
-    ]);
-
-    const convertCurrency = async () => {
-    isConverting.value = true
-    try {
-        const response = await freecurrencyapi.latest({
-            base_currency: inputFromCurrency.value,
-            currencies: inputToCurrency.value
-        });
-
-        const rate = response.data[inputToCurrency.value];
-        result.value = {
-            amount: inputAmount.value,
-            fromCurrency: inputFromCurrency.value,
-            toCurrency: inputToCurrency.value,
-            convertedAmount: (inputAmount.value * rate).toFixed(4)
-        };
-    } catch (error) {
-        console.error('Error fetching the conversion rate:', error);
-    } finally {
-        isConverting.value =  false
-    }
-    };
-
-    return {
-    inputAmount,
-    inputFromCurrency,
-    inputToCurrency,
-    currencies,
-    result,
-    isConverting,
-    convertCurrency,
-    };
-},
-};
-</script>
 
 <style lang="scss" scoped>
 .currency-converter {

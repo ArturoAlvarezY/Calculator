@@ -1,3 +1,55 @@
+<script setup>
+import { ref } from 'vue';
+
+
+let userInput= ref('0');
+
+//Make a function for the numbers
+
+const clickingNumbers = (num) => {
+
+
+  if(userInput.value==='0'){
+    userInput.value = num;
+  } else{
+    userInput.value += num;
+  }
+};
+
+//Make a function for our operators
+
+const clickingOperators = (op) => {
+  if(userInput.value === '0'){
+    userInput.value = '0';
+  }else{
+    userInput.value += op
+  }
+};
+
+//Equal function, wich make my operations
+
+const makingEqual = (eq) => {
+
+  try{
+    userInput.value= eval(userInput.value)
+  } catch(error){
+    userInput.value= 'Error';
+  }
+
+};
+
+//CE function, wich delete my userInput.value content;
+
+const ceScreen = (ce) => {
+ userInput.value= '0'
+};
+
+
+///write a function wich regulate the operators
+
+</script>
+
+
 <template>
 
   <div class="heading">
@@ -101,66 +153,6 @@
 }
 </style>
 
-<script setup>
-import { ref } from 'vue';
-
-
-let userInput= ref('0');
-
-
-//Make a function for the numbers
-
-const clickingNumbers = (num) => {
-
-
-  if(userInput.value==='0'){
-    userInput.value = num;
-  } else{
-    userInput.value += num;
-  }
-};
-
-//Make a function for our operators
-
-const clickingOperators = (op) => {
-  if(userInput.value === '0'){
-    userInput.value = '0';
-  }else{
-    userInput.value += op
-  }
-};
-
-//Equal function, wich make my operations
-
-const makingEqual = (eq) => {
-
-  try{
-    userInput.value= eval(userInput.value)
-  } catch(error){
-    userInput.value= 'Error';
-  }
-
-};
-
-//CE function, wich delete my userInput.value content;
-
-const ceScreen = (ce) => {
- userInput.value= '0'
-};
-
-
-
-
-
-
-
-///write a function wich regulate the operators
-
-
-
-
-
-</script>
 
 
 
