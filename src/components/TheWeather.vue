@@ -18,11 +18,6 @@ import stormIcon from '@/assets/tormenta.png'
 import hightCloudIcon from '@/assets/nubes-altas.png'
 import defaultIcon from '@/assets/default.png'
 
-
-
-
-
-
 const city = ref('');
 const temperature = ref('');
 const icon = ref('');
