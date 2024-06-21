@@ -12,24 +12,24 @@
   
     <div class="keyboard">
 
-      <div class="key number" @click="clickingNumbers(7)">7</div>
-      <div class="key number" @click="clickingNumbers(8)"> 8 </div>
-      <div class="key number" @click="clickingNumbers(9)">9</div>
+      <div class="key number" @click="clickingNumbers('7')">7</div>
+      <div class="key number" @click="clickingNumbers('8')"> 8 </div>
+      <div class="key number" @click="clickingNumbers('9')">9</div>
       <div class="key operator" @click="clickingOperators('/')">/</div>
 
-      <div class="key number" @click="clickingNumbers(4)">4</div>
-      <div class="key number" @click="clickingNumbers(5)">5</div>
-      <div class="key number" @click="clickingNumbers(6)">6</div>
+      <div class="key number" @click="clickingNumbers('4')">4</div>
+      <div class="key number" @click="clickingNumbers('5')">5</div>
+      <div class="key number" @click="clickingNumbers('6')">6</div>
       <div class="key operator" @click="clickingOperators('*')">×</div>
 
-      <div class="key number" @click="clickingNumbers(1)">1</div>
-      <div class="key number" @click="clickingNumbers(2)">2</div>
-      <div class="key number" @click="clickingNumbers(3)">3</div>
+      <div class="key number" @click="clickingNumbers('1')">1</div>
+      <div class="key number" @click="clickingNumbers('2')">2</div>
+      <div class="key number" @click="clickingNumbers('3')">3</div>
       <div class="key operator" @click="clickingOperators('-')">-</div>
 
 
       <div class="key number number-empty"></div>
-      <div class="key number" @click="clickingNumbers(0)">0</div>
+      <div class="key number" @click="clickingNumbers('0')">0</div>
       <div class="key number" @click="clickingNumbers('.')">.</div>
       <div class="key operator" @click="clickingOperators('+')">+</div>
 
