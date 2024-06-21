@@ -1,7 +1,7 @@
 <template>
 
   <div class="heading">
-    <h1>Calculator</h1>
+    <h2>Calculator</h2>
   </div>
 
   <div class="calculatorContainer">
@@ -78,7 +78,13 @@
   padding-inline: 21px;
   text-align: center;
   color: #E8E8EC;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
   font-size: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
 .controls {
